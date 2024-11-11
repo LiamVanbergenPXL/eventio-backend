@@ -1,5 +1,6 @@
 package com.kikada.eventio.Repository;
 
+
 import com.kikada.eventio.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -11,7 +12,6 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    Optional<User> findUserByEmailAndEmail(String email, String password);
-
+    Optional<User> findOneByEmailAndPassword(String email, String password);
     User findByEmail(String email);
 }

@@ -1,36 +1,21 @@
-package com.kikada.eventio.Entity;
+package com.kikada.eventio.DTO;
 
-import jakarta.persistence.*;
+public class UserDTO {
 
-@Entity
-@Table(name = "user")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", length = 45)
     private int id;
-
-    @Column(name = "username", length = 255)
     private String username;
-
-    @Column(name = "email", length = 255)
     private String email;
-
-    @Column(name = "role", length = 255)
     private String role;
-
-    @Column(name = "password", length = 255)
     private String password;
 
-    public User(String email, String password, String username) {
+    public UserDTO(String email, String password, String username) {
         this.email = email;
         this.password = password;
         this.role = "USER";
         this.username = username;
     }
 
-    public User() {
+    public UserDTO() {
     }
 
     public String getEmail() {
@@ -75,7 +60,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserDTO{" +
                 "email='" + email + '\'' +
                 ", id=" + id +
                 ", username='" + username + '\'' +
